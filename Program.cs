@@ -10,7 +10,7 @@ namespace Laboratorium_4
             //Arrays();
             //Zadanie1();
             //Zadanie2();
-            Zadanie8();
+            Zadanie9();
             Console.ReadKey();
         }
 
@@ -228,6 +228,32 @@ namespace Laboratorium_4
             }
 
             Console.WriteLine(nLength);
+        }
+
+        public static void Zadanie9()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int rowDefaultLength = n * 2;
+
+            for (int i = 0; i < n; i++)
+            {
+                int row = rowDefaultLength - 1;
+                
+                Console.WriteLine();
+                for(int j = 0; j < row; j++)
+                {
+                    if(j < i)
+                    {
+                        Console.Write(' ');
+                    }
+                    else
+                    {
+                        Console.Write('#');
+                    }
+                }
+
+                rowDefaultLength--;
+            }
         }
     }
 }
