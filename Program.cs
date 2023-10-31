@@ -7,7 +7,8 @@
             //Console.WriteLine("Hello, World!");
             //Arrays();
             //Zadanie1();
-            Zadanie3();
+            //Zadanie3();
+            Console.ReadKey();
         }
 
         public static void Arrays()
