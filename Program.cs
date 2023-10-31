@@ -1,4 +1,6 @@
-﻿namespace Laboratorium_4
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Laboratorium_4
 {
     internal class Program
     {
@@ -7,7 +9,8 @@
             //Console.WriteLine("Hello, World!");
             //Arrays();
             //Zadanie1();
-            //Zadanie3();
+            //Zadanie2();
+            Zadanie5();
             Console.ReadKey();
         }
 
@@ -66,7 +69,7 @@
             }
         }
 
-        public static void Zadanie3()
+        public static void ZadanieZWhile()
         {
             int i = 0;
             int input;
@@ -82,6 +85,66 @@
             for (int j = 0; j < intArr.Length; j++)
             {
                 Console.WriteLine(intArr[j]);
+            }
+        }
+
+        public static void Zadanie2()
+        {
+            double[] arr = { 12.5, 6.7, 2.89, 10.1, 2.45 };
+            
+            for(int i = arr.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(arr[i]);
+            }
+        }
+
+        public static void Zadanie3()
+        {
+            int suma = 0;
+
+            while(int.TryParse(Console.ReadLine(), out int value))
+            {
+                suma+=value;
+            }
+
+            Console.WriteLine(suma);
+        }
+
+        public static void Zadanie4()
+        {
+            double[,] arr = { { 1.1, 3.5, 2.56 }, { 1.4, 34, 7, }, { 1.5, 56, 2.6 } };
+            double b = 4.1;
+
+            for(int i = 0; i < arr.GetLength(0); i++)
+            {
+                for(int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] > b)
+                    {
+                        Console.WriteLine(arr[i, j]);
+                    }
+                }
+
+            }
+        }
+
+        public static void Zadanie5()
+        {
+            bool isValid = int.TryParse(Console.ReadLine(), out int value);
+
+            while (!isValid || value < 0)
+            {
+                Console.WriteLine("Wpisz liczbę dodatnią!");
+                isValid = int.TryParse(Console.ReadLine(), out value);
+            }
+
+            for(int i = 0; i < value; i++)
+            {
+                Console.WriteLine();
+                for(int j = 0; j < i + 1; j++)
+                {
+                    Console.Write("#");
+                }
             }
         }
     }
