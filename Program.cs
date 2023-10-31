@@ -10,7 +10,7 @@ namespace Laboratorium_4
             //Arrays();
             //Zadanie1();
             //Zadanie2();
-            Zadanie5();
+            Zadanie6();
             Console.ReadKey();
         }
 
@@ -145,6 +145,39 @@ namespace Laboratorium_4
                 {
                     Console.Write("#");
                 }
+            }
+        }
+
+        public static void Zadanie6()
+        {
+            int n = int.Parse(Console.ReadLine());
+            double[] myArray = new double[n];
+
+            for(int i = 0;i < n; i++)
+            {
+                Console.WriteLine("WPISZ LICZBĘ: ");
+                double val = double.Parse(Console.ReadLine());
+                myArray[i] = val;
+            }
+
+            for(int i = myArray.Length - 1; i >= 0; i--)
+            {
+                if(myArray.Length % 2 == 0)
+                {
+                    if(i % 2 != 0)
+                    {
+                        Console.WriteLine(myArray[i]);
+                    }
+                    continue;
+                }
+                else
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.WriteLine(myArray[i]);
+                    }
+                    continue;
+                }  
             }
         }
     }
